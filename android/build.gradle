@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.google.zxing.client.android"
+        minSdkVersion 19
+        targetSdkVersion 22
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'org.greenrobot:greendao:3.2.2'
+    // add library
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+    implementation 'com.amap.api:location:latest.integration'
+    implementation 'com.amap.api:3dmap:latest.integration'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+    implementation 'com.google.zxing:android-core:3.3.0'
+    implementation 'com.google.zxing:core:3.3.0'
+
+
+}
